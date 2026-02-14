@@ -1,15 +1,29 @@
+require 'json'
+
 class Books
-  def initialize
-    @books = []
-  end
-  
+  Filename = 'lib/books.json'.freeze
   def add_book(title, author)
-    @books << { title: title, author: author }
+    books = books_read
+    books << { 'title' => title, 'author' => author }
+    File.write(Filename, JSON.pretty_generate(books))
   end
-  
+
+  def books_read
+    if File.exist?(Filename)
+      JSON.parse(File.read(Filename))
+    else
+      []
+    end
+  end
+
   def list_books
-    @books.each do |book|
-      puts "Title: #{book[:title]}, Author: #{book[:author]}"
+    books = books_read
+    if books.empty?
+      puts 'There are no books in the library.'
+    else
+      books.each do |book|
+        puts "Title: #{book['title']}, Author: #{book['author']}"
+      end
     end
   end
 end
