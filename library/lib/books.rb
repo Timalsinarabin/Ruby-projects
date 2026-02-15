@@ -1,7 +1,7 @@
 require 'json'
-
+# Books class to manage the library's book collection
 class Books
-  Filename = 'lib/books.json'.freeze
+  Filename = 'library/lib/books.json'.freeze
   def add_book(title, author)
     books = books_read
     books << { 'title' => title, 'author' => author }

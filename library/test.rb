@@ -7,7 +7,7 @@ stud = Stud.new
 
 while true
   puts '-' * 40
-  print "1. Add a book\n2. List all books\n3. Exit\n4. Add a student\n5. Loan a book\nChoose an option: "
+  print "1.Add a book\n2.List all books\n3.List loaned books\n4.Add a student\n5.Loan a book\n6.Exit\nChoose an option:"
   choice = gets.chomp.to_i
 
   case choice
@@ -23,8 +23,9 @@ while true
     puts 'Listing all books:'
     library.list_books
   when 3
-    puts 'Exiting...'
-    break
+    puts '-' * 40
+    puts 'Loaned books:'
+    stud.list_loan
   when 4
     puts '-' * 40
     print 'Student ID: '
@@ -38,6 +39,9 @@ while true
     print 'Book Title: '
     book = gets.chomp
     stud.loan_book(s_id, book)
+  when 6
+    puts 'Exiting...'
+    exit
   else
     puts 'Invalid option. Please try again.'
   end
