@@ -7,14 +7,14 @@ user_data = if File.exist?(Filename)
               []
             end
 
-print "Username: "
+print 'Username: '
 username = gets.chomp
 
-print "Password: "
+print 'Password: '
 password = gets.chomp
 
-if user_data.any? { |user| user['username']==username && user['password']==password }
-  puts "Login successful!"
+if user_data.any? { |user| user['username'] == username && user['password'] == password }
+  puts 'Login successful!'
 else
-  puts "Invalid username or password."
+  puts 'Invalid username or password.'
 end
