@@ -46,7 +46,7 @@ class Stud
     end
   end
 
-  def loan_book(s_id,book)
+  def loan_book(s_id, book)
     if stud_read.none? { |student| student['s_id'] == s_id }
       puts "Student with ID #{s_id} does not exist."
       return
