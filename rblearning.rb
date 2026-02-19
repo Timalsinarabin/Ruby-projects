@@ -21,7 +21,7 @@ word.each_char.with_index do |char, index|
   print "#{index + 1}.#{char}, " unless char == ' '
   rev = char + rev unless char == ' '
 end
-puts "\n" + rev
+puts "\n#{rev}"
 
 # Armstrong
 n = 153
@@ -62,7 +62,7 @@ else
 end
 
 num = [184, 52, 39]
-even = num.select { |n| n.even? }
+even = num.select(&:even?)
 puts even
 
 # error
@@ -84,7 +84,7 @@ end
 begin
   # check(15)
   # check_age(5)
-  int '5' + 5
+  int '55'
 rescue RuntimeError, NoMethodError, TypeError => e
   puts e.message
 end

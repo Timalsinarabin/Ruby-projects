@@ -1,0 +1,2 @@
+require 'freewill'
+Freewill.hello
