@@ -1,0 +1,22 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.8.9)
+    sqlite3 (2.9.0)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (2.9.0-x86_64-linux-gnu)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  sqlite3
+
+CHECKSUMS
+  mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
+  sqlite3 (2.9.0) sha256=ece9c00b32ec5f550d3a4a35c41ea8d738563589f090b9dfd0d510b7ae5f296c
+  sqlite3 (2.9.0-x86_64-linux-gnu) sha256=72fff9bd750070ba3af695511ba5f0e0a2d8a9206f84869640b3e99dfaf3d5a5
+
+BUNDLED WITH
+  4.0.6
