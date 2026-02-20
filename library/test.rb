@@ -18,6 +18,7 @@ while true
     print 'Author: '
     author = gets.chomp
     library.add_book(title, author)
+    puts 'Book added'
   when 2
     puts '-' * 40
     puts 'Listing all books:'
@@ -30,7 +31,9 @@ while true
     puts '-' * 40
     print 'Student ID: '
     s_id = gets.chomp
-    stud.add_stud(s_id)
+    print 'Student Name: '
+    s_name = gets.chomp
+    stud.add_stud(s_id, s_name)
     puts "Student with ID #{s_id} added."
   when 5
     puts '-' * 40
