@@ -3,7 +3,6 @@ require 'sqlite3'
 # Student class to manage students and their book loans
 class Stud
   def initialize
-    @books = []
     @db = SQLite3::Database.new "lib/book.db"
     @db.execute <<-SQL
       CREATE TABLE IF NOT EXISTS std_info(
@@ -32,13 +31,13 @@ class Stud
   end
 
   def loan_book(s_id, book)
-    @db.execute "select book_name from bookinfo" do |row|
-      @books.push(row[0])
-    end
-    if @books.include?(book)
+    book_exists = @db.get_first_value("select id from bookinfo where book_name = ?",book)
+    std_exists = @db.get_first_value("select id from std_info where id = ?",s_id)
+    if book_exists && std_exists
       @db.execute "insert into loan_info (s_id,book_name) values(?,?)",[s_id,book]
+      puts "book was sucessfully taken"
     else
-      puts"Book not found"
+      puts"Error check whether book name or id is incorrect"
     end
   end
 end
